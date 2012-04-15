@@ -1,0 +1,166 @@
+@import "compass";
+@import "tcesp-skin";
+@import "_tcesp-base";
+
+/* page.tpl.php */
+
+body { @extend .-tcesp-body; }
+
+#page { 
+  @extend .-tcesp-page;
+  width: $drupal-width;
+  margin: 0 auto; }
+
+#header { 
+  @extend .-tcesp-header; }
+
+#logo-title { @extend .-tcesp-logo-title; }
+
+#logo { @extend .-tcesp-logo; }
+
+#name-and-slogan { @extend .-tcesp-name-and-slogan; }
+
+#site-name { @extend .-tcesp-site-name; }
+
+#site-slogan { @extend .-tcesp-site-slogan; }
+
+#header-region { @extend .-tcesp-header-region; }
+
+#container { @extend .-tcesp-container; }
+
+#page-bottom { @extend .-tcesp-page-bottom; }
+
+#navigation {
+  @extend .-tcesp-navigation; }
+
+#primary {
+  @extend .-tcesp-primary-menu-wrapper;
+}
+
+ul.primary-links  {
+  @extend .-tcesp-primary-menu;
+  > li > .links { @extend .-tcesp-submenu; } }
+
+#secondary { @extend .-tcesp-secondary-menu-wrapper; }
+
+ul.secondary-links  { @extend .-tcesp-secondary-menu; }
+
+#sidebar-left { 
+  @extend .-tcesp-sidebar;
+  float: left;
+  width: $drupal-first-sidebar-width; }
+
+#main { 
+  @extend .-tcesp-main;
+  #sidebar-left + & { 
+    width: $drupal-width - $drupal-first-sidebar-width;
+    float: left; } }
+
+#mission { @extend .-tcesp-mission; }
+
+#breadcrumb { @extend .-tcesp-breadcrumb; }  
+
+#content {
+  @extend .-tcesp-content;
+  
+  div.tabs { @extend .-tcesp-tabs; }
+    
+  .messages { @extend .-tcesp-messages; }
+
+  .pager { @extend .-tcesp-pager; }
+    
+  //drupal prints only a link with an image inside, beware.
+  .feed-icon { @extend .-tcesp-feed-icons; } }
+  
+#page-title { @extend .-tcesp-title; }
+
+#content-content { @extend .-tcesp-content-area; }
+
+#sidebar-right { @extend .-tcesp-sidebar; }
+
+#footer-wrapper {
+  @extend .-tcesp-footer;
+  
+  //Drupal will print the footer message right away, but theming the
+  //whole region isn't a good idea. Copy page.tpl.php to your theme and
+  //edit it to wrap the $footer_message variable
+  //@extend .-tcesp-footer-message;
+
+}
+
+/* block.tpl.php */
+.block {
+  // try scoping the selectors by region
+  @extend .-tcesp-block; 
+  > h2 { @extend .-tcesp-block-title; }
+  .content { @extend .-tcesp-block-content; } 
+
+  #header-region & { 
+    @extend .-tcesp-header-block;
+    > h2 { @extend .-tcesp-header-block-title; }
+    .content { @extend .-tcesp-header-block-content; } }
+
+  #content-top & { 
+    @extend .-tcesp-content-top-block; 
+    > h2 { @extend .-tcesp-content-top-block-title; }
+    .content { @extend .-tcesp-content-top-block-content; } }
+
+  // these are Kit regions blocks, set as examples for any region specific block styling
+  #content-content & { 
+    @extend .-tcesp-content-block; 
+    > h2 { @extend .-tcesp-content-block-title; }
+    .content { @extend .-tcesp-content-block-content; } }
+
+  #sidebar-left &,
+  #sidebar-right & { 
+    @extend .-tcesp-sidebar-block;
+    > h2 { @extend .-tcesp-sidebar-block-title; }
+    .content { @extend .-tcesp-sidebar-block-content; } } 
+  
+  #page-bottom & { 
+    @extend .-tcesp-page-bottom-block; 
+    > h2 { @extend .-tcesp-page-bottom-block-title; }
+    .content { @extend .-tcesp-page-bottom-block-content; } }
+}
+
+/* node.tpl.php */
+.node {
+  @extend .-tcesp-node;
+  .picture { @extend .-tcesp-node-picture; }
+  > h2 { @extend .-tcesp-node-title; }
+  .meta { @extend .-tcesp-node-meta; }
+  .submitted { @extend .-tcesp-node-submitted; }
+  .terms { @extend .-tcesp-node-terms; }
+  .content { @extend .-tcesp-node-content; }
+  .links { @extend .-tcesp-node-links; }
+  &.sticky { @extend .-tcesp-node-sticky; }
+  &.node-unpublished { @extend .-tcesp-node-unpublished; }
+  .preview & { @extend .-tcesp-node-preview; } }
+
+/* user-profile.tpl.php */
+.profile {
+  @extend .-tcesp-profile;
+  .picture { @extend .-tcesp-profile-picture; }
+  h3 { @extend .-tcesp-profile-category-title; }
+  dl { @extend .-tcesp-profile-category-wrapper; }
+  dt { @extend .-tcesp-profile-field-label; }
+  dd { @extend .-tcesp-profile-field-value; } }
+
+/* comment-wrapper.tpl.php */
+#comments { @extend .-tcesp-comments-wrapper; }
+
+/* comment.tpl.php */
+.comment {
+  @extend .-tcesp-comment;
+  &.comment-new{ @extend .-tcesp-comment-new; }
+  &.comment-published{ @extend .-tcesp-comment-published; }
+  &.comment-unpublished{ @extend .-tcesp-comment-unpublished; }
+  &.comment-preview { @extend .-tcesp-comment-preview; }
+  .new { @extend .-tcesp-comment-new-marker; }
+  > h3 { @extend .-tcesp-comment-title; }
+  .submitted { @extend .-tcesp-comment-submitted; }
+  .content { @extend .-tcesp-comment-content; }
+  .user-signature { @extend .-tcesp-comment-user-signature; }
+  .links { @extend .-tcesp-comment-links; }
+}
+

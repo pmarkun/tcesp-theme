@@ -1,0 +1,18 @@
+name = TCE-SP
+description = Tema desenvolvido para o Tribunal de Contas do Estado de São Paulo
+core = 6.x
+engine = phptemplate
+
+stylesheets[all][] = stylesheets/amaranth.css
+stylesheets[all][] = stylesheets/tcesp.css
+
+scripts[all][] = scritps/webfonts.js
+
+regions[header] = Header
+regions[resultados] = Resultados das Sessões
+regions[sidebar_first] = First sidebar
+regions[content_top] = Content top
+regions[content_bottom] = Content bottom
+regions[page_bottom] = Page bottom
+regions[footer] = Footer
+regions[rodapebanners] = Banners do Rodapé

@@ -1,0 +1,701 @@
+
+// This variable controls the total width of the container div
+// You can use px for a Fixed layout or % for a Liquid layout
+$tcesp-width: 960px;
+
+// These variables control the size of the sidebars
+$tcesp-first-sidebar-width: 240px;
+$tcesp-second-sidebar-width: 200px;
+
+// This variable positions the content relative to the sidebars
+// Possible values are first, last, middle
+$tcesp-content-position: "middle";
+
+// These variables control the typefaces as defined in html-reset.css
+$tcesp-versal-typeface: Amaranth, Verdana, Tahoma, "DejaVu Sans", sans-serif; 
+$tcesp-proportional-typeface: Helvetica, Arial, "DejaVu Sans", sans-serif;
+$tcesp-monospaced-typeface: "Courier New", "DejaVu Sans Mono", monospace;
+
+// These variables control the font sizes as defined in html-reset.css
+$tcesp-base-font-size: 0.875em;
+
+// Set the palette for TCESP
+$tcesp-shadow: #CCC;
+$tcesp-red: #FDC4C4;
+$tcesp-vibrant-red: #EC4545 ;
+
+// Some skin base styles
+.-tcesp-basic-title {
+  font: 1.5em $tcesp-versal-typeface;
+  margin: 0;
+  color: black;
+  a { 
+    @include link-colors(black);
+    text-decoration: none; } }
+
+//HTML Elements
+.-tcesp-h2 {
+  font-family: $tcesp-versal-typeface;
+  font-size: 1.429em;
+  font-weight: normal; } 
+
+.-tcesp-h3 {
+  font-family: $tcesp-versal-typeface;
+  font-size: 1.286em;
+  font-weight: normal; }
+
+.-tcesp-h4 {
+  font-family: $tcesp-versal-typeface;
+  font-size: 1.143em;
+  font-weight: normal; }
+
+.-tcesp-p { 
+  margin: 1em 0; }
+
+.-tcesp-li {
+  padding-bottom: 0.25em; }
+
+.-tcesp-ul { 
+  margin: 0;
+  padding: 0; }
+
+.-tcesp-ol {
+  margin: 0;
+  padding: 0; }
+
+.-tcesp-blockquote {
+  margin: 1em 4em; }
+
+.-tcesp-cite {
+  font-style: italic; }
+
+.-tcesp-a {
+  @include link-colors(darken($tcesp-vibrant-red, 33%), $tcesp-vibrant-red, $tcesp-vibrant-red,darken($tcesp-vibrant-red, 66%));
+  &:link { text-decoration: none; }
+  &:visited { }
+  &:hover { text-decoration: underline; }
+  &:focus { }
+  &:active { } }
+
+.-tcesp-pre { }
+
+.-tcesp-code { }
+
+.-tcesp-table {
+	border: 1px solid #bacbd1;
+	border-collapse: collapse;
+	font-size: 12px;
+	margin: 0 auto;
+	text-align: center;
+	width: 480px;
+  margin-bottom: 2em;
+  caption { }
+  tr {
+    &.odd { }
+    &.even { }
+    th {
+      background: #c1dce6;
+      border-color: #c1dce6 #c1dce6 #bacbd1;
+      border-style: solid;
+      border-width: 1px;
+      color: #3b7487;
+      font-size: 1.4em;
+      font-weight: normal;
+      padding: 5px;
+      font-family: Amaranth; }
+    td {
+      border-right: 1px dotted #ec4545;
+      border-bottom: 1px solid #bacbd1;
+      text-align: center;
+      color: #666699;
+      padding: 5px 5px; }
+    thead & { }
+    tfoot & { }
+    tbody & { } } }
+
+// Content Classes
+.-tcesp-full-html-content {
+  font-size: $tcesp-base-font-size;
+  line-height: 1.4em;
+  h2 { @extend .-tcesp-h2; }
+  h3 { @extend .-tcesp-h3; }
+  h4 { @extend .-tcesp-h4; }
+  p { @extend .-tcesp-p; }
+  li { @extend .-tcesp-li; }
+  ul { @extend .-tcesp-ul; }
+  ol { @extend .-tcesp-ol; }
+  pre { @extend .-tcesp-pre; }
+  code { @extend .-tcesp-code; }
+  blockquote { @extend .-tcesp-blockquote; }
+  cite { @extend .-tcesp-cite; }
+  a { @extend .-tcesp-a; }
+  table { @extend .-tcesp-table; } }
+
+.-tcesp-restricted-html-content {
+  font-size: $tcesp-base-font-size;
+  line-height: 1.4em;
+  h3 { @extend .-tcesp-h3; }
+  h4 { @extend .-tcesp-h4; }
+  p { @extend .-tcesp-p; }
+  ul { @extend .-tcesp-ul; }
+  ol { @extend .-tcesp-ol; }
+  li { @extend .-tcesp-li; }
+  a { @extend .-tcesp-a; } }
+
+// Page Components
+.-tcesp-body {
+  font-family: $tcesp-proportional-typeface;
+  @include background-with-css2-fallback(image-url('stripes.png') repeat, linear-gradient(#f9f9f9, #eaeaea 42em));
+  font-size: 100%; /* evitando que o ie faça coisas horríveis */ }
+
+.-tcesp-skip-link { }
+
+.-tcesp-page {
+  padding-top: 2em;
+  .meta { 
+    margin-bottom: 0.5em;
+    > * { display: inline-block; }
+  .content-type {
+    background-color: #e8e8e8;
+    color: $tcesp-vibrant-red;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.75em;
+    font-weight: bold;
+    margin: 0 0.5em 0 0;
+    padding: 0.25em 0.5em;
+    text-transform: uppercase;
+    vertical-align: middle; }
+  .content-date { 
+    font-size: 0.8em;
+    color: #999; } } }
+
+.-tcesp-header {
+  background-color: white; }
+
+.-tcesp-logo-title { // usually a #logo-title wrapper div (YMMV)
+  background-image: image-url('banner.png'); } 
+
+.-tcesp-logo {
+  display: block;
+  padding: 20px;
+}
+
+.-tcesp-name-and-slogan {
+  @include pie-clearfix; } // usually a #name-and-slogan wrapper div (YMMV) 
+
+.-tcesp-site-name {
+  @extend .-tcesp-basic-title;
+  float: left;
+  font-size: 1.75em;
+  line-height: 1.8em;
+  text-indent: 1em; 
+  a {
+    @include link-colors(#5a5a5a);
+    font-family: $tcesp-versal-typeface; } }
+
+.-tcesp-site-slogan { }
+
+.-tcesp-header-region { }
+
+.-tcesp-container {
+  background-color: white; }
+
+.-tcesp-page-bottom { 
+  @include pie-clearfix;
+  padding: 2em;
+	background: url('../images/rodape.png') no-repeat;
+	margin-top: 0px; }
+
+.-tcesp-navigation { }
+
+.-tcesp-primary-menu-wrapper {
+  padding: 1em; }
+
+.-tcesp-primary-menu { // by default, both menus inherit these styles
+  @include no-bullets;
+  padding: 0;
+  > li { // use '>' to target only child items
+    @extend .-tcesp-basic-title;
+    display: block;
+    font-size: 1.33em;
+    line-height: 1em;
+    border-top: 1px solid $tcesp-red;
+    padding: 0;
+    a { 
+      @include background(
+        linear-gradient(left, rgba(160, 160, 160, 0) 8px, rgba(160, 160, 160, 0.2) 32px, rgba(0, 0, 0, 0) 32px));
+      display: block;
+      padding: 0.33em 0 0.33em 1.8em;
+      margin: 0.33em 0;
+      background-color: #FAFAFA;
+      position: relative;
+      &:after { 
+         content: "";
+         position: absolute;
+         left: 0;
+         top: 0;
+         height: 100%;
+         width: 32px;
+         // a imagem é colocada no tcesp-menu.css
+         background: url('') no-repeat center center; } }
+    &.first { }
+    &.last { }
+    &.expanded {
+      li { 
+        font-size: 1em;
+        a { 
+          font-size: 0.75em;
+          padding-left: 2.4em; } } } } }
+
+.-tcesp-secondary-menu-wrapper {
+  position: relative;
+  overflow: visible;
+  &:before {
+    @include box-shadow(0 0 3px $tcesp-shadow);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 162px;
+    height: 3px;
+    content: ""; }
+  @for $i from 1 through 6 {
+    &.items-#{$i}:before {
+      width: 162px + ($i - 1) * 192px ;
+    }
+  }
+}
+
+.-tcesp-secondary-menu { // by default, both menus inherit these styles
+  @include horizontal-list;
+  font-family: $tcesp-versal-typeface;
+  > li { // use '>' to target only child items
+    background-color: white;
+    width: 152px;
+    position: relative;
+    padding: 0.25em 30px 0.25em 10px;
+    a {
+      @include link-colors(black);
+      text-decoration: none; }
+    &:after {
+      @include box-shadow(5px 0 3px 1px $tcesp-shadow);
+      @include skew(45deg, 0);
+      position: absolute;
+      right: 15px;
+      top: 0;
+      z-index: 1;
+      width: 15px;
+      height: 100%;
+      content: "";
+      background-color: white; }
+    &.first {
+      padding-left: 0.5em; }
+    &.last {
+      padding-right: 0;
+      &:after {
+      right: -15px;
+      z-index: -1;
+      width: 30px; } }
+    &.expanded { } } }
+
+.-tcesp-submenu { // think expanded menus, not secondary menus
+    > li { // use '>' to target only child items
+    &.first { }
+    &.last { }
+    &.expanded { } } }
+
+.-tcesp-sidebar { } // by default both sidebars inherit these styles
+
+.-tcesp-main { }
+
+.-tcesp-mission { }
+
+.-tcesp-breadcrumb {
+  a { } }
+
+.-tcesp-content { 
+  margin: 1em; }
+
+.-tcesp-tabs {
+  .primary {
+    padding: 0;
+    margin: 0.5em 0;
+    border: none; }
+  .secondary {
+    padding: 0;
+    margin: 0.5em 0;
+    border: none; }
+  // the following styles apply to both tab groups.
+  li {
+    display: inline-block;
+    margin: 0 0.25em 0 0;
+    padding: 0; } 
+  a {
+    @include link-colors(darken($tcesp-vibrant-red, 10%), $tcesp-vibrant-red, $tcesp-vibrant-red, darken($tcesp-vibrant-red, 40%));
+    background-color: #e8e8e8;
+    border: 1px solid #bbb;
+    margin: 0;
+    padding: 0 1em; } 
+  a.active {
+    color: black;
+    background-color: white; } }
+
+.-tcesp-messages {
+  &.status { }
+  &.warning { }
+  &.error { }
+  &.help {
+    .more-link-help { } }
+
+  // when there is more than one message, they get wrapped in a ul
+  ul { }
+  li { }
+}
+
+.-tcesp-pager {
+  .pager-item { }
+  .pager-current { }
+  .pager-previous {
+    a { 
+      display: inline-block;
+      @include replace-text('tras-pager.png');
+      width: 16px;
+      vertical-align: middle; }  }
+  .pager-next {
+    a { 
+      display: inline-block;
+      @include replace-text('next-pager.png');
+      width: 16px;
+      vertical-align: middle; }  }
+  .pager-first {
+    a { 
+      display: inline-block;
+      @include replace-text('trastras-pager.png');
+      width: 20px;
+      vertical-align: middle; } }
+  .pager-last {
+    a { 
+      display: inline-block;
+      @include replace-text('nextnext-pager.png');
+      width: 20px;
+      vertical-align: middle; } }
+  a { @extend .-tcesp-basic-title;
+      font-size: 1.25em;
+      text-decoration: none;
+      color: #D1D1D1; } }
+
+.-tcesp-feed-icons {
+  .feed-icon { } }
+  
+.-tcesp-title {
+  @extend .-tcesp-basic-title;
+} 
+
+.-tcesp-content-area { }
+
+.-tcesp-footer {
+	background-color: #ffffff;
+	margin-top: 10px;
+	padding: 10px;
+	text-align: center;
+	font-size: 12px;
+}
+
+.-tcesp-footer-message { }
+
+// Block Components
+// These are defaults for every block in your theme
+.-tcesp-block {
+  margin: 0.5em 1em; }
+
+.-tcesp-block-title {
+  @extend .-tcesp-basic-title;
+  margin-bottom: 0.5em; }
+
+.-tcesp-block-content { @extend .-tcesp-restricted-html-content; }
+
+// Make copies of the components for a diversity of block styles, like these
+.-tcesp-header-block { }
+
+.-tcesp-header-block-title {
+  text-align: center;
+  position: relative;
+  span {
+    background: none repeat scroll 0 0 white;
+    display: inline-block;
+    padding: 0 0.5em;
+    position: relative;
+    z-index: 1; }
+  &:after,
+  &:before { 
+    height:1px;
+    width: 25%;
+    content:"";
+    position: absolute;
+    top: 50%; }
+  &:before {
+    left: 15%;
+    @include background-image(linear-gradient(right, rgba(250,220,220,1) 50%, rgba(250,220,220,0))); }
+  &:after { 
+    right: 15%;
+    @include background-image(linear-gradient(left, rgba(250,220,220,1) 50%, rgba(250,220,220,0))); } }
+
+.-tcesp-header-block-content { @extend .-tcesp-block-content; }
+
+.-tcesp-content-top-block {
+  border-top: 1px solid $tcesp-red;
+  margin-top: 1em;
+  padding-top: 0.66em;
+  border-bottom: 1px solid $tcesp-red;
+}
+
+.-tcesp-content-top-block-title { }
+
+.-tcesp-content-top-block-content { @extend .-tcesp-block-content; }
+
+.-tcesp-content-block { }
+
+.-tcesp-content-block-title { }
+
+.-tcesp-content-block-content { @extend .-tcesp-block-content; }
+
+.-tcesp-sidebar-block { }
+
+.-tcesp-sidebar-block-title { }
+
+.-tcesp-sidebar-block-content { @extend .-tcesp-block-content; }
+
+.-tcesp-page-bottom-block {
+  float: left;
+  width: 20%;
+}
+
+.-tcesp-page-bottom-block-title {
+	font-size: 15px;
+}
+
+.-tcesp-page-bottom-block-content { 
+  @extend .-tcesp-block-content;
+  .menu {
+    margin:0;
+    padding:0;
+    list-style-type: none;
+    > li { 
+      list-style: none;
+      background-image:url(../images/flecha_vermelha.png);
+      background-repeat: no-repeat;
+      background-position: 0 50%;
+      padding: 1px 0 1px 10px;
+      margin-bottom:-5px;
+      margin-left:-1px;
+      font-family:Arial;
+      font-size:11px; 
+      a { 
+        color:#474747; } } } }
+
+// Node Components
+// Make copies of these components for a diversity of node styles
+.-tcesp-node {
+  margin-bottom: 1.5em;
+  .content-type {
+    background-color: #e8e8e8;
+    color: $tcesp-vibrant-red;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.5em;
+    font-weight: bold;
+    margin: 0 0 0 1em;
+    padding: 0.25em 0.5em;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+}
+
+.-tcesp-node-picture { }
+
+.-tcesp-node-title {
+  @extend .-tcesp-basic-title;
+  font-size: 1.33em;
+  line-height: 1em;
+  margin: 0.33em 0; } //meant for node listings, see also .-tcesp-title
+
+.-tcesp-node-meta {
+
+.-tcesp-node-submitted { }
+
+.-tcesp-node-terms { } }
+
+.-tcesp-node-content { @extend .-tcesp-full-html-content; }
+
+.-tcesp-node-links {
+  padding: 0;
+  margin: 0.5em 0;
+  border: none;
+  li {
+    display: inline-block;
+    margin: 0 0.25em 0 0;
+    padding: 0;
+    &.first { }
+    &.last { } }
+  a {
+    @include link-colors(darken($tcesp-vibrant-red, 10%), $tcesp-vibrant-red, $tcesp-vibrant-red, darken($tcesp-vibrant-red, 40%));
+    font-size: 0.75em;
+    text-decoration: none;
+    background-color: #e8e8e8;
+    margin: 0;
+    padding: 0.25em 1em; } 
+  a.active {
+    color: black;
+    background-color: white; } }
+
+.-tcesp-node-sticky { }
+
+.-tcesp-node-unpublished {
+    .unpublished { } }
+
+.-tcesp-node-by-viewer { }
+
+.-tcesp-node-preview { }
+
+// Profile Components
+.-tcesp-profile { }
+
+.-tcesp-profile-picture { }
+
+.-tcesp-profile-category-header { }
+
+.-tcesp-profile-category-wrapper { }
+
+.-tcesp-profile-field-label { }
+
+.-tcesp-profile-field-value { }
+
+// Comment wrapper
+.-tcesp-comments-wrapper { 
+  > h2 { @extend .-tcesp-basic-title; }
+}
+
+// Comment components
+.-tcesp-comment {
+  .comment-date { 
+    color: #999;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 0.66em;
+    margin-left: 1em;
+    white-space: nowrap; }
+  .submitted-by {
+    margin-top: 0.25em;
+    text-align: right;
+    color: #999;
+    .author { 
+      a { 
+        @include link-colors(#999);
+        text-decoration: none; }
+      font-weight: bold; } } }
+
+.-tcesp-comment-new { }
+
+.-tcesp-comment-published { }
+
+.-tcesp-comment-unpublished { }
+
+.-tcesp-comment-preview { }
+
+.-tcesp-comment-new-marker { }
+
+.-tcesp-comment-title { 
+  @extend .-tcesp-basic-title;
+  a { color: $tcesp-vibrant-red; } }
+
+.-tcesp-comment-submitted { }
+
+.-tcesp-comment-content { @extend .-tcesp-full-html-content; }
+
+.-tcesp-comment-user-signature { }
+
+.-tcesp-comment-links {
+  @extend .-tcesp-node-links;
+  margin-top: -1.25em;
+}
+
+#search-box {
+  float: right;
+  padding: 0.9em 0;
+  .form-item { 
+    margin: 0;
+    width: 240px;
+    display: inline-block; }
+  label {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute; }
+  .form-text {
+    font-family: $tcesp-versal-typeface;
+    background-color: #BFDBE5;
+    width: 100%;
+    padding: 0.25em;
+    border: none; }
+  .form-submit {
+    @include replace-text('search.png');
+    display: inline-block;
+    background-color: #eaeaea;
+    width: 2.5em;
+    height: 100%;
+    padding: 0.25em;
+    border: none; } }
+
+.page-search {
+  .box h2{
+    font-family: Amaranth;
+    font-size: 1.3em;
+  }
+
+  .search-results {
+    span {
+      font-family: Amaranth;
+      font-size: 1em; }
+    dt a {
+      color: #ec4545;
+      font-family: Amaranth;
+      font-size: 0.8em;
+      text-decoration: none;}
+
+    dd {
+      font-size: 0.9em;
+      margin: 2px 0 20px; } }
+}
+
+.page-not-node #content-content { 
+  @extend .-tcesp-full-html-content;
+}
+
+#block-views-vw_comunicados-block_1 { 
+  .view-content {
+    @include pie-clearfix; }
+  .views-row {
+    border: 2px dotted #EC4545;
+    float: left;
+    width: 40%;
+    margin: 0 2%;
+    padding: 1% 2%; }
+  .views-field-field-comunic-datapubl-value {
+    font-weight: bold;
+    float: right;
+    width: 80px;
+    text-align: right;
+    line-height: 32px; } 
+  .views-field-title {
+    @extend .-tcesp-basic-title; 
+    margin-right: 80px;
+    a { font-size: 0.8em; } }
+  .views-field-body {
+    color: #666; }
+  .views-field-upload-fid {
+    text-align: right;
+    a { 
+      color: #666 !important; 
+      text-decoration: underline !important; } }
+    .more-link { 
+      margin: 0.5em 0;
+      a {
+        color: black !important;
+        text-decoration: underline !important; } }
+}

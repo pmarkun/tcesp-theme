@@ -1,0 +1,37 @@
+/** Menu superior **/
+
+/** Espaçamento entre cabeçalho e conteúdo **/
+
+#name-and-slogan {
+	font-family: 'Amaranth';
+	display: inline-block;
+}
+
+#name-and-slogan {
+	display: block;
+}
+
+#name-and-slogan:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/** Paginador **/
+
+#content .pager .pager-previous a {
+	display: inline;
+}
+
+#content .pager .pager-next a {
+	display: inline;
+}
+
+#content .pager .pager-first a {
+	display: inline;
+}
+
+#content .pager .pager-last a {
+	display: inline;
+}
+

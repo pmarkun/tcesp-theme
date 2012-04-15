@@ -1,0 +1,1438 @@
+/**************
+	Índice: 
+
+1. Cabeçalho
+ 1.1 Logo
+ 1.2 Título
+ 1.3 Resultados das Sessões (Utilizado atualmente)
+
+2. Corpo
+ 2.1 Página 
+ 2.2 Barras laterais
+ 2.3 Comentários 
+ 2.4 Paginador
+ 2.5 Tabela
+
+3. Busca
+ 3.1 Barra de busca
+ 3.2 Página de busca
+ 3.3 Página de resultados
+
+4. Menus
+ 4.1 Links primários
+ 4.2 Links secundários
+ 4.3 Resolvendo bug dos bullets
+
+5. Blocos
+ 5.1 Resultados das sessões / Bloco (Não está sendo utilizado)
+ 5.2 Comunicados
+ 5.3 Banner do rodapé
+ 5.4 Links do rodapé
+
+6. Rodapé
+ 6.1 Banners
+
+7. Node
+
+**************/
+
+/* 1. Cabeçalho */
+
+/* 1.1 Logo */
+
+#logo-title {
+	background-image: url('../images/banner.png?1319592594');
+	width:960px;
+	height:178px;
+}
+
+#logo {
+	display: block;
+	padding: 20px;
+}
+
+/* 1.2 Título */
+
+#name-and-slogan {
+}
+
+#name-and-slogan:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#site-name {
+	float: left;
+	font-size: 1.75em;
+	line-height: 1.8em;
+	text-indent: 1em;
+	margin: 0;
+}
+
+#site-name a {
+	color: #5a5a5a;
+	text-decoration: none;
+	font-family: 'Amaranth' !important;
+	font-weight: normal !important;
+}
+
+/* 1.3 Resultados das Sessões */
+
+#resultados {
+	text-align:center;
+	width:900px;
+	background: #FFFFFF;
+	margin-bottom: -30px;
+	padding-top: 1px;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-bottom: 30px;
+}
+
+#resultados .box {
+	width: 260px;
+	height: 130px;
+	padding-left: 8px;
+	margin-bottom: 0pt;
+	float: left;
+}
+
+.separador {
+	width: 17px;
+	float: left;
+	margin-top: -25px;
+	margin-right: -25px;
+	padding-left: 20px;
+}
+
+#resultados a {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 0.9em;
+	font-weight: normal;
+	text-decoration: none;
+	color: #373737;
+}
+
+#resultados a:hover {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 0.9em;
+	font-weight: normal;
+	text-decoration: underline;
+	color: #373737;
+}
+
+#resultados h2 {
+	font-family: 'Amaranth';
+	font-size: 1.5em;
+	font-weight: normal;
+	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 5px;
+	background-image: url('../images/sessoes-centro.png');
+	background-position: center top;
+	width: 900px;
+	text-align: center;
+}
+
+#resultados h3 {
+	font-family: 'Amaranth';
+	font-size: 1.4em;
+	font-weight: normal;
+	font-style: italic;
+	color: #BA0909;
+	text-align: center;
+	margin-top: 0;
+	margin-bottom: -10px;
+	padding-left: 45px;
+}
+
+#resultados li {
+	list-style-image: url(../images/flecha_vermelha.png);
+	list-style-position: inside;
+	padding: 1px 0 1px 10px;
+	margin-bottom: -5px;
+	margin-left: -1px;
+}
+
+
+/* 2. Corpo */
+
+body { 
+	font-family: Helvetica, Arial, "DejaVu Sans", sans-serif;	 
+	background: #eaeaea url('../images/stripes.png?1319592594');
+}
+
+#container {
+	background-color: white;
+}
+
+#content {
+	margin: 1em;
+}
+
+#content div.tabs .primary {
+	padding: 0;
+	margin: 0.5em 0;
+	border: none;
+}
+
+#content div.tabs .secondary {
+	padding: 0;
+	margin: 0.5em 0;
+	border: none;
+}
+
+#content div.tabs li {
+	display: inline-block;
+	margin: 0 0.25em 0 0;
+	padding: 0;
+}
+
+#content div.tabs a {
+	color: #e61818;
+	font-family: Helvetica, Arial, sans-serif;
+	background-color: #e8e8e8;
+	border: 1px solid #bbb;
+	margin: 0;
+	padding: 0 1em;
+}
+
+#content div.tabs a:visited {
+	color: #5c0909;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#content div.tabs a:hover {
+	color: #ec4545;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#content div.tabs a:active {
+	color: #ec4545;
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+#content div.tabs a.active {
+	color: black;
+	font-family: Helvetica, Arial, sans-serif;
+	background-color: white;
+}
+
+/* 2.1 Página */
+
+#page {
+	width: 960px;
+	margin: 0 auto;
+	padding-top: 2em;
+}
+
+#page-title {
+	margin-bottom: 16px;
+	color: black;
+	font: 1.5em 'Amaranth';
+	margin: 0;
+}
+
+#page .meta {
+	margin-bottom: 0.5em;
+	margin-left: 0.5em;
+}
+
+#page .meta > * {
+	display: inline;
+	text-transform: uppercase;
+	font-size: 0.8em;
+}
+
+#page .meta .content-type {
+	background-color: #e8e8e8;
+	color: #ec4545;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 0.75em;
+	font-weight: normal;
+	margin: 0 0.5em 0 0;
+	padding: 0.25em 0.5em;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+
+#page .meta .content-date {
+	font-size: 0.8em;
+	color: #999;
+}
+
+.separador-node {
+	width: 528px;
+	height: 12px;
+}
+
+/* 2.2 Barras Laterais */
+
+#sidebar-left {
+	float: left;
+	width: 230px;
+	margin-top: 16px;
+}
+
+#sidebar-left + #main {
+	width: 720px;
+	float: left;
+	border-top-color: #FDC4C4;
+	border-top-style: solid;
+	border-top-width: 1px;
+	margin-left: 10px;
+	margin-top: 1em;
+	padding-top: 0.66em;
+}
+
+/* 2.3 Comentários */
+
+#comments h2{
+	margin-bottom: 15px;
+	color: black;
+	font-family: 'Amaranth';
+	font-size: 1.5em;
+	margin: 0;
+}
+
+.comment {
+	border-bottom: 1px solid #EEEEEE;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+}
+
+.comment:last-child {
+	border: none;
+}
+
+.comment h3 {
+	color: black;
+	font-family: 'Amaranth';
+	font-size: 1.5em;
+	margin: 0;
+}
+
+.comment h3 a {
+	border-right: solid 3px #EC4545;
+	padding-right: 20px;
+	text-decoration: none;
+}
+
+.comment .content {
+	font-size: 0.9em;	
+	margin-top: -9px;
+}
+
+.comment div.submitted-by {
+	font-size: 0.8em;
+}
+
+.comment .links, .node .links {
+	padding: 0;
+	margin: 0.5em 0;
+	border: none;
+}
+
+.comment .links li, .node .links li {
+	display: inline;
+	margin: 0 0.25em 0 0;
+	padding: 0;
+}
+
+.comment .links a, .node .links a {
+	color: #e61818 !important;
+	font-size: 0.75em;
+	font-weight: normal;
+	text-decoration: none;
+	background-color: #e8e8e8;
+	margin: 0;
+	padding: 0.25em 1em;
+}
+
+.comment .links a:visited, .node .links a:visited {
+	color: #5c0909;
+}
+
+.comment .links a:hover, .node .links a:hover {
+	color: #ec4545;
+}
+
+.comment .links a:active, .node .links a:active {
+	color: #ec4545;
+}
+
+.comment .links a.active,
+.node .links a.active {
+	color: black;
+	background-color: white;
+}
+
+.comment-date,
+.comment .comment-date {
+	color: #999;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 0.55em;
+	margin-left: 1em;
+	white-space: nowrap;
+}
+
+.submitted-by,
+.comment .submitted-by {
+	margin-top: 0.25em;
+	text-align: right;
+	color: #999;
+}
+
+.submitted-by .author,
+.comment .submitted-by .author {
+	font-weight: bold;
+}
+
+.submitted-by .author a,
+.comment .submitted-by .author a {
+	color: #999999;
+	text-decoration: none;
+}
+
+.comment > h3 a {
+	color: #ec4545;
+}
+
+.comment .links {
+	margin-top: -1.25em;
+}
+
+#content .pager {
+	height:63px;
+	padding-top:20px;
+	background-image: url('../images/pagershadow.png');
+	background-position: center 5px;
+	background-repeat: no-repeat;
+}
+
+#content .pager ul {
+	margin-top: 10px;
+}
+
+#content .pager li {
+	margin-top: 10px;
+}
+
+#content .pager .pager-previous a {
+	display: inline;
+	text-indent: 300px;
+	overflow: hidden;
+	text-align: left;
+	background-image: url('../images/tras-pager.png?1319592594');
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+	width: 20px;
+	height: 17px;
+	vertical-align: middle;
+	padding-left: 15px;
+	color: #FFF;
+}
+
+#content .pager .pager-next a {
+	display: inline;
+	text-indent: 300px;
+	overflow: hidden;
+	text-align: left;
+	background-image: url('../images/next-pager.png');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	width: 20px;
+	height: 17px;
+	vertical-align: middle;
+	padding-left: 15px;
+	color: #FFF;
+}
+
+#content .pager .pager-first a {
+	display: inline;
+	text-indent: 300px;
+	overflow: hidden;
+	background-image: url('../images/trastras-pager.png');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	width: 20px;
+	height: 13px;
+	text-align:left;
+	margin-bottom: 4px;
+	margin-right: -30px;
+	padding-left: 20px;
+	color: #FFF;
+}
+
+#content .pager .pager-last a {
+	display: inline;
+	text-indent: 300px;
+	overflow: hidden;
+	text-align: right;
+	background-image: url('../images/nextnext-pager.png');
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	width: 40px;
+	width: 20px;
+	height: 13px;
+	vertical-align: middle;
+	margin-bottom: 1px;
+	margin-left: -35px;
+	padding-left: 15px;
+	color: #FFF;
+}
+
+#content .pager a {
+	display: inline;
+	text-align:right;
+	width:30px;
+	background-repeat:no-repeat;
+	margin-left:-10px;
+	font-size: 1.2em;
+	text-decoration: none;
+	color: #D1D1D1;	
+}
+
+#content .pager-current {
+	display: inline;
+	font-size: 1.2em;
+	color: #787878;
+	font-weight: normal;
+	text-align:right;
+	width:10px;
+	margin-left:10px;
+	background-repeat:no-repeat;
+}
+
+/* 2.5 Tabela */
+
+#tabela {
+	border: 1px solid #bacbd1;
+	border-collapse: collapse;
+	font-size: 12px;
+	margin: 0 auto;
+	text-align: center;
+	width: 480px;
+}
+
+#tabela th {
+	background: #c1dce6;
+	border-color: #c1dce6 #c1dce6 #bacbd1;
+	border-style: solid;
+	border-width: 1px;
+	color: #3b7487;
+	font-size: 1.4em;
+	font-weight: normal;
+	padding: 5px;
+	font-family: 'Amaranth';
+}
+
+#tabela td {
+	border-right: 1px dotted #ec4545;
+	border-bottom: 1px solid #bacbd1;
+	text-align: center;
+	color: #666699;
+	padding: 5px 5px;
+}
+
+/* 3. Busca */
+
+/* 3.1 Barra de busca */
+
+#search-box {
+	float: right;
+	padding: 0.9em 0;
+}
+
+#search-box .form-item {
+	margin: 0;
+	width: 240px;
+	float: left;
+	display: inline-block;
+}
+
+#search-box label {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute;
+	visibility: hidden;
+}
+
+#search-box .form-text {
+	font-family: 'Amaranth';
+	background-color: #BFDBE5;
+	width: 100%;
+	padding: 0.25em;
+	border: none;
+}	
+
+#search-box .form-submit {
+	text-indent: -999px;	
+	overflow: hidden;
+	background-image: url('../images/search.png?1318877067');
+	background-repeat: no-repeat;
+	background-position: center;
+	display: block; /* Não acrescentar inline-block */
+	float: left;
+	background-color: #eaeaea;
+	width: 2.5em;
+	height: 100%;
+	padding: 0.25em;
+	border: none;
+	text-transform: capitalize; /* IE7 */
+}
+
+/* 3.2 Página de Busca */
+
+.page-search .box h2 {
+	font-family: 'Amaranth';
+	font-size: 1.3em;
+}
+
+.page-search .search-results span {
+	font-family: 'Amaranth';
+	font-size: 1em;	
+}
+
+.page-search .search-results dt a {
+	color: #ec4545;
+	font-family: 'Amaranth';
+	font-size: 0.8em;
+	text-decoration: none;
+}
+
+.page-search .search-results dd {
+	font-size: 0.9em;
+	margin: 2px 0 20px;
+}
+
+/* 3.3 Página de Resultados */
+
+.search-results span{
+	font-family: 'Amaranth';
+	font-size: 1em;
+}
+
+.search-results dt a{
+	color: #ec4545;
+	font-family: 'Amaranth';
+	font-size: 0.8em;
+	text-decoration: none;
+}
+
+.search-results dd{
+	font-size: 0.9em;
+	margin: 2px 0 20px;
+}
+
+.box h2{
+	font-family: 'Amaranth';
+	font-size: 1.3em;
+}
+
+.box h2{
+	font-family: 'Amaranth';
+	font-size: 1.3em;
+}	
+
+/* 4. Menus */
+
+.menu {
+	margin: 0;
+	padding: 0;
+	list-style: none !important;
+}
+
+.menu li {
+	padding-right: 0;
+	list-style: none;
+}
+
+.menu_icon {
+	height: auto !important;
+}
+
+/* 4.1 Links Primários */
+
+#primary {
+	padding-left: 1em;
+	list-style: none;
+}
+
+#primary .menu ul {
+	list-style: none;
+	padding-right: 0;
+	padding-left: 25px;
+}
+
+#primary .menu ul li a {
+	border: none;
+
+}
+
+#primary .menu li {
+	list-style: none;
+	margin-left: 0px;
+	padding-right: 0;
+	border-top: 1px solid #fdc4c4;
+	display: block;
+	font-size: 1em;
+	line-height: 1em;
+}	
+
+#primary .menu li a {
+	background-color: #F5F5F5;
+	font-family: 'Amaranth';
+	margin: 0;
+	color: black;
+	text-decoration: none;
+	display: block;
+	padding: 0.44em 0 0.44em 2em;
+	margin: 0.11em 0 0.33em 0;
+	background-color: #FAFAFA;
+	list-style:none !important;
+	position: relative;
+}
+
+/* 4.2 Links Secundários */
+
+/* CÓDIGO ANTIGO #secondary {
+	position: relative;
+	overflow: visible;
+}
+
+#secondary:before {
+	background: #FFFFFF;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	width: 162px;
+	height: 3px;
+	content: "";
+}
+
+.items-1#secondary:before {
+	width: 162px;
+}
+
+.items-2#secondary:before {
+	width: 354px;
+}
+
+.items-3#secondary:before {
+	width: 546px;
+}
+
+.items-4#secondary:before {
+	width: 738px;
+}
+
+.items-5:before, .items-5#secondary:before {
+	width: 934px;
+}
+
+.items-6:before, .items-6#secondary:before {
+	width: 1122px;
+}
+
+.secondary-links {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	*zoom: 1;
+	font-family: 'Amaranth';
+}
+
+ul.secondary-links li {
+	list-style: none;
+	margin-left: 0px;
+	white-space: nowrap;
+	display: inline;
+	float: left;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+ul.links.inline {
+    display: inline;
+}
+
+ul.secondary-links li:first-child, ul.secondary-links li.first {
+	padding-left: 0;
+}
+
+ul.secondary-links li:
+last-child {
+	padding-right: 0;
+}
+
+ul.secondary-links li.last {
+	padding-right: 0;
+}
+
+ul.secondary-links > li {
+	background-color: white;
+	width: 153px;
+	position: relative;
+	padding: 0.25em 30px 0.25em 10px;
+}
+
+ul.secondary-links > li a {
+	color: black;
+	text-decoration: none;
+}
+
+ul.secondary-links > li:after {
+	background: url('../images/fita_final.png') no-repeat;
+	position: absolute;
+	right: 15px;
+	top: 0;
+	width: 25px;
+	height: 100%;
+	content: "";
+}
+
+ul.secondary-links > li.first {
+	padding-left: 0.5em;
+}
+
+ul.secondary-links > li.last {
+	padding-right: 0;
+}
+
+ul.secondary-links > li.last:after {
+	right: -25px;
+	z-index: -1;
+	width: 25px;
+} FIM DO CÓDIGO ANTIGO*/
+
+#secondary {
+	position: relative;
+	overflow: visible;
+}
+
+.secondary-links {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	overflow: hidden;
+	*zoom: 1;
+	font-family: 'Amaranth';
+}
+
+ul.secondary-links {
+}
+
+ul.secondary-links li {
+	background: url('../images/fita_final.png') no-repeat;
+	background-position: right;
+	list-style: none;
+	margin-left: 0px;
+	white-space: nowrap;
+	display: inline;
+	float: left;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+ul.links.inline {
+    display: inline;
+}
+
+ul.secondary-links > li {
+	background-color: white;
+	width: auto;
+	position: relative;
+	padding: 0.25em 40px 0.25em 25px;
+}
+
+ul.secondary-links > li a {
+	color: black;
+	text-decoration: none;
+}
+
+ul.secondary-links > li.last {
+	background-color:transparent;
+	background-image:url('../images/fita_final_last.png');
+	background-position: right;
+	background-repeat:no-repeat;
+}
+
+/* 4.3. Resolvendo bug dos bullets */
+
+li.expanded {
+  list-style-type: none !important;
+  list-style-image: none !important;
+  padding: 0.2em 0.5em 0 0; /* LTR */
+  margin: 0;
+}
+li.collapsed {
+  list-style-type: none !important;
+  list-style-image: none !important; /* LTR */
+  padding: 0.2em 0.5em 0 0; /* LTR */
+  margin: 0;
+}
+li.leaf {
+  list-style-type: none !important;
+  list-style-image: none !important;
+  padding: 0.2em 0.5em 0 0; /* LTR */
+  margin: 0;
+}
+
+/* 5. Blocos */
+
+.block {
+	margin: 0.5em 1em;
+}
+
+.block > h2 {
+	margin-bottom: 0.5em;
+	font-family: 'Amaranth';
+	font-weight: normal;
+	color: black;
+}
+
+.block > h2 a {
+	color: black;
+	text-decoration: none;
+}
+
+#content-top .block {
+	border-bottom: 1px solid #fdc4c4;
+	margin-top: -15px;
+}
+
+#header-region .block .content,
+#content-top .block .content,
+#content-content .block .content,
+#sidebar-left .block .content,
+#sidebar-right .block .content,
+#page-bottom .block .content,
+.block .content {
+	font-size: 0.875em;
+	line-height: 1.4em;
+}
+
+#header-region .block .content h3,
+#content-top .block .content h3,
+#content-content .block .content h3,
+#sidebar-left .block .content h3,
+#sidebar-right .block .content h3,
+#page-bottom .block .content h3,
+.block .content h3 {
+	font-family: 'Amaranth';
+	font-size: 1.286em;
+	font-weight: normal;
+}
+
+#header-region .block .content h4,
+#content-top .block .content h4,
+#content-content .block .content h4,
+#sidebar-left .block .content h4,
+#sidebar-right .block .content h4,
+#page-bottom .block .content h4,
+.block .content h4 {
+	font-family: 'Amaranth';
+	font-size: 1.143em;
+	font-weight: normal;
+}
+
+#header-region .block .content p,
+#content-top .block .content p,
+#content-content .block .content p,
+#sidebar-left .block .content p,
+#sidebar-right .block .content p,
+#page-bottom .block .content p,
+.block .content p {
+	margin: 1em 0;
+}
+
+#header-region .block .content li,
+#content-top .block .content li,
+#content-content .block .content li,
+#sidebar-left .block .content li,
+#sidebar-right .block .content li,
+#page-bottom .block .content li,
+.block .content li {
+	padding-bottom: 0.25em;
+}
+
+#header-region .block .content ul,
+#content-top .block .content ul,
+#content-content .block .content ul,
+#sidebar-left .block .content ul,
+#sidebar-right .block .content ul,
+#page-bottom .block .content ul,
+.block .content ul {
+	margin: 0;
+	padding: 0;
+}
+
+#header-region .block .content ol,
+#content-top .block .content ol,
+#content-content .block .content ol,
+#sidebar-left .block .content ol,
+#sidebar-right .block .content ol,
+#page-bottom .block .content ol,
+.block .content ol {
+	margin: 0;
+	padding: 0;
+}
+
+#header-region .block .content a,
+#content-content .block .content a,
+#sidebar-left .block .content a,
+#sidebar-right .block .content a,
+#page-bottom .block .content a,
+.block .content a {
+	color: #7c0d0d;
+}
+
+#header-region .block .content a:visited,
+#content-top .block .content a:visited,
+#content-content .block .content a:visited,
+#sidebar-left .block .content a:visited,
+#sidebar-right .block .content a:visited,
+#page-bottom .block .content a:visited,
+.block .content a:visited {
+	color: black;
+}
+
+#header-region .block .content a:hover,
+#content-top .block .content a:hover,
+#content-content .block .content a:hover,
+#sidebar-left .block .content a:hover,
+#sidebar-right .block .content a:hover,
+#page-bottom .block .content a:hover,
+.block .content a:hover {
+	color: #ec4545;
+}
+
+#header-region .block .content a:active,
+#content-top .block .content a:active,
+#content-content .block .content a:active,
+#sidebar-left .block .content a:active,
+#sidebar-right .block .content a:active,
+#page-bottom .block .content a:active,
+.block .content a:active {
+	color: #ec4545;
+}
+
+#header-region .block .content a:link,
+#content-content .block .content a:link,
+#sidebar-left .block .content a:link,
+#sidebar-right .block .content a:link,
+#page-bottom .block .content a:link,
+.block .content a:link {
+	text-decoration: none;
+ }
+
+#header-region .block .content a:hover,
+#content-top .block .content a:hover,
+#content-content .block .content a:hover,
+#sidebar-left .block .content a:hover,
+#sidebar-right .block .content a:hover,
+#page-bottom .block .content a:hover,
+.block .content a:hover {
+	text-decoration: underline;
+}
+
+/* 5.1 Resultado das Sessões / Bloco */
+
+#header {
+	background-color: white;
+}
+
+#header-region {
+	margin-bottom: -16px;
+}
+
+#header-region .block {
+	margin-top: -19px;
+}
+
+#header-region .block > h2 {
+	text-align: center;
+	position: relative;
+	padding-top: 5px;
+}
+
+#header-region .block > h2 span {
+	background: none repeat scroll 0 0 white;
+	display: inline-block;
+	padding: 0 0.5em;
+	position: relative;
+	z-index: 1;
+}
+
+#header-region .block > h2:after, 
+#header-region .block > h2:before {
+	height: 1px;
+	width: 25%;
+	content: "";
+	position: absolute;
+	top: 50%;
+}
+
+#header-region .block > h2:before {
+	left: 15%;
+	background-image: -webkit-gradient(linear, 100% 50%, 0% 50%, color-stop(50%, #fadcdc), color-stop(100%, rgba(250, 220, 220, 0)));
+	background-image: -webkit-linear-gradient(right, #fadcdc 50%, rgba(250, 220, 220, 0));
+	background-image: -moz-linear-gradient(right, #fadcdc 50%, rgba(250, 220, 220, 0));
+	background-image: -o-linear-gradient(right, #fadcdc 50%, rgba(250, 220, 220, 0));
+	background-image: -ms-linear-gradient(right, #fadcdc 50%, rgba(250, 220, 220, 0));
+	background-image: linear-gradient(right, #fadcdc 50%, rgba(250, 220, 220, 0));
+}
+
+#header-region .block > h2:after { right: 15%;
+	background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(50%, #fadcdc), color-stop(100%, rgba(250, 220, 220, 0)));
+	background-image: -webkit-linear-gradient(left, #fadcdc 50%, rgba(250, 220, 220, 0));
+	background-image: -moz-linear-gradient(left, #fadcdc 50%, rgba(250, 220, 220, 0));
+	background-image: -o-linear-gradient(left, #fadcdc 50%, rgba(250, 220, 220, 0));
+	background-image: -ms-linear-gradient(left, #fadcdc 50%, rgba(250, 220, 220, 0));
+	background-image: linear-gradient(left, #fadcdc 50%, rgba(250, 220, 220, 0));
+}
+
+/* 5.2 Comunicados */
+
+.views-field-title .field-content {
+	font-size:110%;	
+}
+
+.views-field-field-comunic-datapubl-value {
+	float: right;	
+	font-weight: normal;	
+	font-size:82%;
+	line-height: 32px;
+	text-align: right;	
+	width: 65px;
+}
+
+.views-field-body {
+	color: #666666;
+	margin-top:-5%;
+}
+
+.views-field-upload-fid {
+	text-align: right;
+	margin-top:30px;
+}
+
+#block-views-vw_comunicados-block_1 .view-content {
+	*zoom: 1;
+}
+
+#block-views-vw_comunicados-block_1 .view-content:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#block-views-vw_comunicados-block_1 .views-row {
+	border: 1px dotted #EC4545;
+	float: left;
+	width: 40%;
+	margin: 0 2%;
+	padding: 1% 2%;
+}
+
+#block-views-vw_comunicados-block_1 .views-field-field-comunic-datapubl-value {
+	font-weight: normal;
+	float: right;
+	width: 65px;
+	text-align: right;
+	line-height: 32px;
+	margin-top: -5px;
+}
+
+#block-views-vw_comunicados-block_1 .views-field-title {
+	margin-right: 0;
+}
+
+#block-views-vw_comunicados-block_1 .views-field-title a {
+	font-family: 'Amaranth';
+	font-size: 1.05em;
+	font-weight: normal;
+	color: #000;
+	text-decoration: none;
+}
+
+#block-views-vw_comunicados-block_1 .views-field-body {
+	color: #666;
+}
+
+#block-views-vw_comunicados-block_1 .views-field-upload-fid {
+	text-align: right;
+}
+
+#block-views-vw_comunicados-block_1 .views-field-upload-fid a {
+	color: #666 !important;
+	text-decoration: underline !important;
+}
+
+#block-views-vw_comunicados-block_1 .more-link {
+	margin: 0.5em 0;
+}
+
+#block-views-vw_comunicados-block_1 .more-link a {
+	color: black !important;
+	font-weight: normal;
+	font-family: 'Amaranth';
+	text-decoration: underline !important;	
+}
+
+/* 5.3 Banner do rodapé */
+
+#content-bottom {
+	vertical-align: bottom;
+}
+
+/* 5.4 Links do Rodapé */
+
+#page-bottom {
+	*zoom: 1;
+	padding: 2em;
+	background: url("../images/rodape.png") no-repeat;
+	padding-top: 30px;
+}
+
+#page-bottom:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+#page-bottom .block {
+	float: left;
+	width: 20%;
+}
+
+#page-bottom .block > h2 {
+	font-size: 15px;
+}
+
+#page-bottom .block .content .menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#page-bottom .block .content .menu > li {
+	list-style: none;
+	background-image: url(../images/flecha_vermelha.png);
+	background-repeat: no-repeat;
+	background-position: 0 5px;
+	padding: 1px 0 1px 10px;
+	margin-bottom: -5px;
+	margin-left: -1px;
+	font-family: Arial;
+	font-size: 11px;
+}
+
+#page-bottom .block .content .menu > li a {
+	color: #474747;
+	background-image: none;
+	padding: 0;	
+}
+
+/* 6. Rodapé */
+
+#footer, #footer-wrapper {
+	background-color: #ffffff;
+	margin-top: 10px;
+	padding: 10px;
+	text-align: center;
+	font-size: 12px;
+}
+
+/* 6.1 Banners */
+
+#banners {
+	text-align:center;
+	width:900px;
+	background: #FFFFFF;
+	padding-bottom: 20px;
+	margin-top: -20px;
+	padding-right: 30px;
+	padding-left: 30px;
+}
+
+#banners a {
+	text-decoration: none;
+}
+
+#banners img {
+	margin:10px;
+	width: 195px;
+	height: 85px;
+	border-color: #CCCCCC;
+	border-style: solid;
+	border-width: 2px;
+}
+
+/* 7. Node */
+
+.node > h2 {
+	font-family: 'Amaranth';
+	font-size: 1.33em;
+	font-weight: normal;
+	margin: 0.33em 0;
+	line-height: 1em;
+	color: #000000 !important;
+}
+
+.node > h2 a {
+	color: #000000 !important;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.node > h2 a:visited {
+	color: #000000;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.node .content h2,
+.page-not-node #content-content h2 {
+	font-family: 'Amaranth';
+	font-size: 1.429em;
+	font-weight: normal;
+	color: #000000;
+}
+
+.node .content h3,
+.page-not-node #content-content h3 {
+	font-family: 'Amaranth';
+	font-size: 1.286em;
+	font-weight: normal;
+}
+
+.node .content h4,
+.page-not-node #content-content h4 {
+	font-family: 'Amaranth';
+	font-size: 1.143em;
+	font-weight: normal;
+}
+
+.node .content p,
+.page-not-node #content-content p {
+	margin: 1em 0;
+}
+
+.node .content li,
+.page-not-node #content-content li {
+	padding-bottom: 0.25em;
+}
+
+.node .content ul,
+.page-not-node #content-content ul {
+	margin: 0;
+	padding: 0;
+}
+
+.node .content ol,
+.page-not-node #content-content ol {
+	margin: 0;
+	padding: 0;
+}
+
+.node .content blockquote,
+.page-not-node #content-content blockquote {
+	margin: 1em 4em;
+}
+
+.node .content cite,
+.page-not-node #content-content cite {
+	font-style: italic;
+}
+
+.node .content a,
+.page-not-node #content-content a {
+	color: #7c0d0d;
+}
+
+.node .content a:visited,
+.page-not-node #content-content a:visited {
+	color: black;
+	
+}
+
+.node .content a:hover,
+.page-not-node #content-content a:hover {
+	color: #ec4545;
+}
+
+.node .content a:active,
+.page-not-node #content-content a:active {
+	color: #ec4545;
+}
+
+.node .content a:link,
+.page-not-node #content-content a:link {
+	text-decoration: none;
+ }
+
+.node .content a:hover,
+.page-not-node #content-content a:hover {
+	text-decoration: underline;
+}
+
+.node .content table,
+.page-not-node #content-content table {
+	border: 1px solid #bacbd1;
+	border-collapse: collapse;
+	font-size: 12px;
+	margin: 0 auto;
+	text-align: center;
+	width: 480px;
+	margin-bottom: 2em;
+}
+
+.node .content table tr th,
+.comment .content table tr th,
+.page-not-node #content-content table tr th {
+	background: #c1dce6;
+	border-color: #c1dce6 #c1dce6 #bacbd1;
+	border-style: solid;
+	border-width: 1px;
+	color: #3b7487;
+	font-size: 1.4em;
+	font-weight: normal;
+	padding: 5px;
+	font-family: 'Amaranth';
+}
+
+.node .content table tr td,
+.page-not-node #content-content table tr td {
+	border-right: 1px dotted #ec4545;
+	border-bottom: 1px solid #bacbd1;
+	text-align: center;
+	color: #666699;
+	padding: 5px 5px;
+}
+
+.node .content,
+.page-not-node #content-content {
+	font-size: 0.875em;
+	line-height: 1.4em;
+}
+
+.node {
+	margin-bottom: 1.5em;
+}
+
+.node .content-type {
+	background-color: #e8e8e8;
+	color: #ec4545;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 0.5em;
+	font-weight: bold;
+	margin: 0 0 0 1em;
+	padding: 0.25em 0.5em;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
