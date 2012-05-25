@@ -720,6 +720,7 @@ body {
     border-right: 1px solid #DDD;
     margin: 0;
     color: #666;
+    display: inline;
     float: left;
     font-size: 13px;
     height: 16px;
