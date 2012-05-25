@@ -699,6 +699,7 @@ body {
 
 #secondary {
     border-bottom: 2px solid #7C0D0D;
+    width:100%;
 }
 
 #secondary ul {
