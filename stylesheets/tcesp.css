@@ -709,6 +709,11 @@ body {
     width: 100%;
 }
 
+#secondary li:after {
+	content: "";
+	display: block;
+	clear: both;
+}
 
 #secondary li {
     border-left: 1px solid white;
