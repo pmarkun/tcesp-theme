@@ -783,6 +783,7 @@ body {
 #secondary li.expanded:hover ul {
     display:block;
     margin-top:11px;
+    *margin-top:27px;
     border-top: 2px solid #7C0D0D;
 }
 
