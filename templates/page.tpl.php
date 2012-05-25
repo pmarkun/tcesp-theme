@@ -109,23 +109,13 @@
 
   <div id="page">
    <div id="above">
-    <?php if (!empty($secondary_links)): ?>
-      <div id="secondary" class="clear-block items-<?php print count($secondary_links); ?>">
-        <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')); ?>
-	<?php print theme('menu_tree', menu_tree('secondary-links')); ?>
-      </div>
-      
-    <?php endif; ?>
-    <div id="logo-title">
+       <div id="name-and-slogan">
+
       <?php if (!empty($logo)): ?>
         <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
           <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
         </a>
-      <?php endif; ?>
-    </div> <!-- /logo-title -->
-  </div> <!-- /above -->
-
-  <div id="name-and-slogan">
+    <?php endif; ?>
     <?php if (!empty($site_name)): ?>
       <h1 id="site-name" style="font-family:'Amaranth';">
         <a href="<?php print $front_page ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
@@ -136,6 +126,15 @@
       <div id="search-box"><?php print $search_box; ?></div>
     <?php endif; ?>
   </div> <!-- /name-and-slogan -->
+  
+    <?php if (!empty($secondary_links)): ?>
+      <div id="secondary" class="clear-block items-<?php print count($secondary_links); ?>">
+        <?php print theme('menu_tree', menu_tree('secondary-links')); ?>
+      </div>
+      
+    <?php endif; ?>
+
+  </div> <!-- /above -->
 
    <div id="header">
 

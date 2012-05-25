@@ -40,16 +40,17 @@
 
 /* 1.1 Logo */
 
-#logo-title {
-	background-image: url('../images/banner.png?1319592594');
-	width:960px;
-	height:178px;
-}
 
 #logo {
-	display: block;
-	padding: 20px;
+	padding-left: 25px;
+    padding-bottom: 10px;
+    float:left;
 }
+
+#logo img {
+    width:60px;
+    height:60px;
+    }
 
 /* 1.2 Título */
 
@@ -67,7 +68,6 @@
 	font-size: 1.75em;
 	line-height: 1.8em;
 	text-indent: 1em;
-	margin: 0;
 }
 
 #site-name a {
@@ -697,168 +697,109 @@ body {
 
 /* 4.2 Links Secundários */
 
-/* CÓDIGO ANTIGO #secondary {
-	position: relative;
-	overflow: visible;
-}
-
-#secondary:before {
-	background: #FFFFFF;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 0;
-	width: 162px;
-	height: 3px;
-	content: "";
-}
-
-.items-1#secondary:before {
-	width: 162px;
-}
-
-.items-2#secondary:before {
-	width: 354px;
-}
-
-.items-3#secondary:before {
-	width: 546px;
-}
-
-.items-4#secondary:before {
-	width: 738px;
-}
-
-.items-5:before, .items-5#secondary:before {
-	width: 934px;
-}
-
-.items-6:before, .items-6#secondary:before {
-	width: 1122px;
-}
-
-.secondary-links {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	overflow: hidden;
-	*zoom: 1;
-	font-family: 'Amaranth';
-}
-
-ul.secondary-links li {
-	list-style: none;
-	margin-left: 0px;
-	white-space: nowrap;
-	display: inline;
-	float: left;
-	padding-left: 4px;
-	padding-right: 4px;
-}
-
-ul.links.inline {
-    display: inline;
-}
-
-ul.secondary-links li:first-child, ul.secondary-links li.first {
-	padding-left: 0;
-}
-
-ul.secondary-links li:
-last-child {
-	padding-right: 0;
-}
-
-ul.secondary-links li.last {
-	padding-right: 0;
-}
-
-ul.secondary-links > li {
-	background-color: white;
-	width: 153px;
-	position: relative;
-	padding: 0.25em 30px 0.25em 10px;
-}
-
-ul.secondary-links > li a {
-	color: black;
-	text-decoration: none;
-}
-
-ul.secondary-links > li:after {
-	background: url('../images/fita_final.png') no-repeat;
-	position: absolute;
-	right: 15px;
-	top: 0;
-	width: 25px;
-	height: 100%;
-	content: "";
-}
-
-ul.secondary-links > li.first {
-	padding-left: 0.5em;
-}
-
-ul.secondary-links > li.last {
-	padding-right: 0;
-}
-
-ul.secondary-links > li.last:after {
-	right: -25px;
-	z-index: -1;
-	width: 25px;
-} FIM DO CÓDIGO ANTIGO*/
-
 #secondary {
-	position: relative;
-	overflow: visible;
+    border-bottom: 2px solid #7C0D0D;
 }
 
-.secondary-links {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	overflow: hidden;
-	*zoom: 1;
-	font-family: 'Amaranth';
+#secondary ul {
+
+}
+#secondary .menu ul {
+    display: block;
+    width: 100%;
 }
 
-ul.secondary-links {
+
+#secondary li {
+    border-left: 1px solid white;
+    border-right: 1px solid #DDD;
+    margin: 0;
+    color: #666;
+    display: block;
+    float: left;
+    font-size: 13px;
+    height: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    padding:0px;
+    padding-top:11px;
+    padding-bottom:11px;
+    background-color: #F8F8F8;
+    font-family: 'Amaranth';
+    position: relative;
 }
 
-ul.secondary-links li {
-	background: url('../images/fita_final.png') no-repeat;
-	background-position: right;
-	list-style: none;
-	margin-left: 0px;
-	white-space: nowrap;
-	display: inline;
-	float: left;
-	padding-left: 4px;
-	padding-right: 4px;
+#secondary.items-4 li {
+    width:238px;
 }
 
-ul.links.inline {
-    display: inline;
+#secondary.items-5 li {
+    width:190px;
 }
 
-ul.secondary-links > li {
-	background-color: white;
-	width: auto;
-	position: relative;
-	padding: 0.25em 40px 0.25em 25px;
+#secondary.items-6 li {
+    width: 158px;
 }
 
-ul.secondary-links > li a {
-	color: black;
-	text-decoration: none;
+#secondary.items-7 li {
+    width: 134px;
 }
 
-ul.secondary-links > li.last {
-	background-color:transparent;
-	background-image:url('../images/fita_final_last.png');
-	background-position: right;
-	background-repeat:no-repeat;
+#secondary li.first {
+    border-left:1px solid #F8F8F8;
+}
+
+#secondary li.last {
+    border-right:1px solid #F8F8F8;
+}
+
+#secondary li a, li a:active, #secondary li a:visited {
+    color: #666;
+    text-decoration:none;
+    display: block;
+    width: 100%;
+    height: 100%;
+} 
+
+#secondary li.expanded a  {
+    background: url("../images/seta.png") no-repeat right center transparent;
+    background-position: right;
+}
+
+#secondary li.expanded ul {
+    width: inherit;
+    position: absolute;
+    margin-left:-1px;
+    z-index: 99999;
+    display:none;
+    }
+
+#secondary li.expanded:hover ul {
+    display:block;
+    margin-top:11px;
+    border-top: 2px solid #7C0D0D;
+}
+
+#secondary li.expanded ul li {
+    display: block;
+    background: none repeat scroll 0 0 #EAEAEA;
+    border-bottom: 1px solid #FFF;
+    border-left: 1px solid #EAEAEA;
+    border-right: 1px solid #EAEAEA;
+    width:inherit;
+}
+
+#secondary li.expanded ul li:hover {
+    background: none repeat scroll 0 0 #666;
+    
+}
+
+#secondary li.expanded ul li a {
+    background: transparent;
+}
+
+#secondary li.expanded ul li:hover a {
+    color: #FFF;
 }
 
 /* 4.3. Resolvendo bug dos bullets */
