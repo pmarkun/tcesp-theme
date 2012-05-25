@@ -709,7 +709,7 @@ body {
     width: 100%;
 }
 
-#secondary li:after {
+#secondary .menu ul:after {
 	content: "";
 	display: block;
 	clear: both;
