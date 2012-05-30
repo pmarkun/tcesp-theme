@@ -38,12 +38,11 @@
 
 /* 1. Cabeçalho */
 
+
 /* 1.1 Logo */
 
 
 #logo {
-	padding-left: 25px;
-    padding-bottom: 10px;
     float:left;
 }
 
@@ -55,6 +54,8 @@
 /* 1.2 Título */
 
 #name-and-slogan {
+    background-color: #FFF;
+    padding: 10px 25px 10px 25px;
 }
 
 #name-and-slogan:after {
@@ -68,6 +69,10 @@
 	font-size: 1.75em;
 	line-height: 1.8em;
 	text-indent: 1em;
+}
+
+#site-name {
+    margin: 0;
 }
 
 #site-name a {
@@ -162,6 +167,7 @@
 body { 
 	font-family: Helvetica, Arial, "DejaVu Sans", sans-serif;	 
 	background: #eaeaea url('../images/stripes.png?1319592594');
+    margin-top: 0;
 }
 
 #container {
@@ -225,7 +231,6 @@ body {
 #page {
 	width: 960px;
 	margin: 0 auto;
-	padding-top: 2em;
 }
 
 #page-title {
@@ -726,7 +731,6 @@ body {
     font-size: 13px;
     height: 16px;
     text-align: center;
-    text-transform: uppercase;
     padding:0px;
     padding-top:11px;
     padding-bottom:11px;
