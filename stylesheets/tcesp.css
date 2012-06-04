@@ -735,7 +735,7 @@ body {
     display: inline;
     float: left;
     font-size: 13px;
-    height: 16px;
+    min-height: 16px;
     text-align: center;
     padding:0px;
     padding-top:11px;
